@@ -1,5 +1,6 @@
 // 3 public methods Start() Stop() reset()
 
+// Stopwatch Constructor function
 const StopWatch = function() {
   let duration = 0;
   let running = false;
@@ -7,7 +8,6 @@ const StopWatch = function() {
   let startDuration = function() {
     if (!running) {
       running = true;
-      console.log(`The clock has started`);
       duration = Date.now();
     } else {
       throw new Error("The clock has already been started");
@@ -17,14 +17,12 @@ const StopWatch = function() {
   let endDuration = function() {
     if (running) {
       running = false;
-      console.log(`The clock has stopped`);
     } else {
       throw new Error("The clock has already been stopped");
     }
   };
 
   let resetDuration = function() {
-    console.log(`The Clock has been reset`);
     if (duration === 0) {
       throw new Error("The clock has already been reset");
     } else if (!running) {
@@ -47,7 +45,7 @@ const StopWatch = function() {
   Object.defineProperty(this, "duration", {
     get: function() {
       if (duration > 0) {
-        let time = Date.now() - duration;
+        let time = (Date.now() - duration) / 1000;
         return time;
       } else {
         return duration;
@@ -58,19 +56,23 @@ const StopWatch = function() {
 
 const sw = new StopWatch();
 
-sw.start();
-console.log(`Time: ${sw.duration}`);
+// module.exports = sw;
 
-setTimeout(() => {
-  sw.stop();
-  console.log(`Time: ${sw.duration}`);
-}, 3000);
 
-setTimeout(() => {
-  sw.reset();
-  console.log(`Time: ${sw.duration}`);
-}, 5000);
 
-setTimeout(() => {
-  sw.reset();
-}, 6000);
+// sw.start();
+// console.log(`Time: ${sw.duration}`);
+
+// setTimeout(() => {
+//   sw.stop();
+//   console.log(`Time: ${sw.duration}`);
+// }, 4000);
+
+// setTimeout(() => {
+//   sw.reset();
+//   console.log(`Time: ${sw.duration}`);
+// }, 5000);
+
+// setTimeout(() => {
+//   sw.reset();
+// }, 6000);
