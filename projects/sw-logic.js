@@ -4,10 +4,6 @@ $.getScript("stopwatch.js", function() {
 //   console.log(sw);
   const $display = $("#sw-display");
 
-  //   setInterval(() => {
-  //     $display.html(sw.duration);
-  //     console.log(sw.duration);
-  //   }, 0.1);
 
   const myIntv = setInterval(() => {
     console.log("starting interval");
@@ -32,7 +28,6 @@ $.getScript("stopwatch.js", function() {
   $(".controls").on("click", event => {
     const action = event.originalEvent.originalTarget.className;
 
-    // console.log(action);
 
     switch (action) {
       case "start":
