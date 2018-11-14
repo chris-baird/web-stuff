@@ -1,4 +1,3 @@
-console.log(window.clearInterval);
 $.getScript("stopwatch.js", function() {
     console.log(window.clearInterval);
 //   console.log(sw);
@@ -11,7 +10,7 @@ $.getScript("stopwatch.js", function() {
 
   const updateDisplay = action => {
       console.log(action);
-    
+
 
     if (action === "start") {
         console.log(action)
